@@ -4,28 +4,83 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JSON Data Display</title>
+    <!-- Add Highcharts library -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- Add CSS for proper display -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      label {
+        margin-right: 10px;
+      }
+
+      select {
+        margin-bottom: 10px;
+      }
+
+      #charts-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      #nseChart,
+      #bseChart {
+        width: calc(50% - 20px); /* Adjust according to your layout */
+        height: 400px;
+        margin: 10px;
+      }
+
+      #refresh {
+        margin-top: 10px;
+      }
+
+      #ganesh-image {
+        display: block;
+        margin: 20px auto;
+        max-width: 100px;
+      }
+    </style>
   </head>
   <body>
-    <h1>JSON Data Display</h1>
-    <label for="files">Select a file:</label>
+    <h1>om Ganesh namha</h1>
+    <img id="ganesh-image" src="ganesh.jpeg" alt="Lord Ganesha" />
+    <label for="files">Select Rashi :</label>
     <select id="files">
       <option value="kark.json">Kark</option>
       <option value="dhanu.json">Dhanu</option>
-      <option value="kumbh.json">kumbh</option>
+      <option value="kumbh.json">Kumbh</option>
     </select>
 
-    <label for="keys">Select a key:</label>
+    <label for="keys">Select a key :</label>
     <select id="keys">
       <!-- Key options will be added by script.js -->
     </select>
 
-    <label for="values">Select a value:</label>
-    <select id="values">
-      <!-- Value options will be added by script.js -->
-    </select>
+    <label for="values">Starting point</label>
+    <select id="values" disabled></select>
 
     <label for="dates">Select a date:</label>
     <input type="date" id="dates" />
+    <label for="language">Select Language:</label>
+    <select id="language">
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+      <option value="mr">Marathi</option>
+      <option value="sa">Sanskrit</option>
+    </select>
+
+    <div id="button-container">
+      <!-- Add refresh button -->
+      <button id="refresh">Refresh</button>
+    </div>
+
+    <div id="charts-container">
+      <div id="nseChart"></div>
+      <div id="bseChart"></div>
+    </div>
 
     <script src="script.js"></script>
   </body>
