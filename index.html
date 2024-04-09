@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JSON Data Display</title>
-    <!-- Add Bootstrap CSS -->
+    <!-- Add flatpickr library -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Add Highcharts library -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -64,8 +67,10 @@
     <label for="values">Starting point</label>
     <select id="values" disabled></select>
 
+
     <label for="dates">Select a date:</label>
-    <input type="date" id="dates" />
+<input type="text" id="date" placeholder="Select date" readonly>
+
     <label for="language">Select Language:</label>
     <select id="language">
       <option value="en">English</option>
