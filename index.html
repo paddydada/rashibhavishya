@@ -47,27 +47,11 @@
         margin: 20px auto;
         max-width: 100px;
       }
-
-      /* Style for positioning language select */
-      #language-container {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-      }
     </style>
   </head>
   <body>
     <h1>om Ganesh namha</h1>
     <img id="ganesh-image" src="ganesh.jpeg" alt="Lord Ganesha" />
-    <div id="language-container">
-      <label for="language">Select Language:</label>
-      <select id="language" class="form-control">
-        <option value="en">English</option>
-        <option value="hi">Hindi</option>
-        <option value="mr">Marathi</option>
-        <option value="sa">Sanskrit</option>
-      </select>
-    </div>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-3">
@@ -94,6 +78,15 @@
         </div>
       </div>
       <div class="row">
+        <div class="col-md-4">
+          <label for="language">Select Language:</label>
+          <select id="language" class="form-control">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="mr">Marathi</option>
+            <option value="sa">Sanskrit</option>
+          </select>
+        </div>
         <div class="col-md-4">
           <div id="button-container">
             <!-- Add refresh button -->
