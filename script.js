@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+    flatpickr("#dates", {
+        dateFormat: "Y-m-d", // Set the date format
+        disableMobile: true // Disable mobile mode to ensure consistent behavior
+    });
+  
   const fileDropdown = document.getElementById("files");
   const keysDropdown = document.getElementById("keys");
   const valuesDropdown = document.getElementById("values");
