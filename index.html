@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JSON Data Display</title>
-    <!-- Add flatpickr library -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Add Highcharts library -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <!-- Add CSS for proper display -->
@@ -47,46 +47,70 @@
         margin: 20px auto;
         max-width: 100px;
       }
+
+      /* Style for positioning language select */
+      #language-container {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
     </style>
   </head>
   <body>
     <h1>om Ganesh namha</h1>
-    <img id="ganesh-image" src="https://m.media-amazon.com/images/I/515PZdpAWhL._SX300_SY300_QL70_FMwebp_.jpg" alt="Lord Ganesha" />
-    <label for="files">Select Rashi :</label>
-    <select id="files">
-      <option value="kark.json">Kark</option>
-      <option value="dhanu.json">Dhanu</option>
-      <option value="kumbh.json">Kumbh</option>
-    </select>
-
-    <label for="keys">Select a key :</label>
-    <select id="keys">
-      <!-- Key options will be added by script.js -->
-    </select>
-
-    <label for="values">Starting point</label>
-    <select id="values" disabled></select>
-
-
-    <label for="dates">Select a date:</label>
-<input type="text" id="date" placeholder="Select date" readonly>
-
-    <label for="language">Select Language:</label>
-    <select id="language">
-      <option value="en">English</option>
-      <option value="hi">Hindi</option>
-      <option value="mr">Marathi</option>
-      <option value="sa">Sanskrit</option>
-    </select>
-
-    <div id="button-container">
-      <!-- Add refresh button -->
-      <button id="refresh" class="btn btn-primary">Refresh</button>
+    <img id="ganesh-image" src="ganesh.jpeg" alt="Lord Ganesha" />
+    <div id="language-container">
+      <label for="language">Select Language:</label>
+      <select id="language" class="form-control">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="mr">Marathi</option>
+        <option value="sa">Sanskrit</option>
+      </select>
     </div>
-
-    <div id="charts-container">
-      <div id="nseChart"></div>
-      <div id="bseChart"></div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <label for="files">Select Rashi :</label>
+          <select id="files" class="form-control">
+            <option value="kark.json">Kark</option>
+            <option value="dhanu.json">Dhanu</option>
+            <option value="kumbh.json">Kumbh</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="keys">Select a key :</label>
+          <select id="keys" class="form-control">
+            <!-- Key options will be added by script.js -->
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="values">Starting point</label>
+          <select id="values" class="form-control" disabled></select>
+        </div>
+        <div class="col-md-3">
+          <label for="dates">Select a date:</label>
+          <input type="date" id="dates" class="form-control" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div id="button-container">
+            <!-- Add refresh button -->
+            <button id="refresh" class="btn btn-primary">Refresh</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div id="nseChart"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="bseChart"></div>
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
