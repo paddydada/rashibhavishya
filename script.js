@@ -202,8 +202,47 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function changeLanguage() {
-        // Language change logic here...
-    }
+    var language = document.getElementById("language").value;
+    var languageText = {
+        'en': 'Select Language:',
+        'hi': 'भाषा चुनें:',
+        'mr': 'भाषा निवडा:',
+        'sa': 'भाषा निवडा:'
+    };
+    var rashiOptions = {
+        'en': ['Mesh &#9800;', 'Vrishabha &#9801;', 'Mithuna &#9802;', 'Karka &#9803;', 'Simha &#9804;', 'Kanya &#9805;', 'Tula &#9806;', 'Vrishchika &#9807;', 'Dhanu &#9808;', 'Makara &#9809;', 'Kumbha &#9810;', 'Meena &#9811;'],
+        'hi': ['मेष &#9800;', 'वृषभ &#9801;', 'मिथुन &#9802;', 'कर्क &#9803;', 'सिंह &#9804;', 'कन्या &#9805;', 'तुला &#9806;', 'वृश्चिक &#9807;', 'धनु &#9808;', 'मकर &#9809;', 'कुंभ &#9810;', 'मीन &#9811;'],
+        'mr': ['मेष &#9800;', 'वृषभ &#9801;', 'मिथुन &#9802;', 'कर्क &#9803;', 'सिंह &#9804;', 'कन्या &#9805;', 'तुला &#9806;', 'वृश्चिक &#9807;', 'धनु &#9808;', 'मकर &#9809;', 'कुंभ &#9810;', 'मीन &#9811;'],
+        'sa': ['मेष &#9800;', 'वृषभ &#9801;', 'मिथुन &#9802;', 'कर्क &#9803;', 'सिंह &#9804;', 'कन्या &#9805;', 'तुला &#9806;', 'वृश्चिक &#9807;', 'धनु &#9808;', 'मकर &#9809;', 'कुंभ &#9810;', 'मीन &#9811;']
+    };
+    var keyOptions = {
+        'en': ['RAVI-KETU-KETU', 'RAVI-KETU-SHUKRA', 'RAVI-KETU-RAVI', 'RAVI-KETU-CHANDRA', 'RAVI-KETU-MANGAL', 'RAVI-KETU-RAHU', 'RAVI-KETU-GURU', 'RAVI-KETU-SHANI', 'RAVI-KETU-BUDH', 'RAVI-SHUKRA-SHUKRA', 'RAVI-SHUKRA-RAVI', 'RAVI-SHUKRA-CHANDRA', 'RAVI-SHUKRA-MANGAL', 'RAVI-SHUKRA-RAHU', 'RAVI-SHUKRA-GURU', 'RAVI-SHUKRA-SHANI', 'RAVI-SHUKRA-BUDH', 'RAVI-SHUKRA-KETU', 'RAVI-RAVI-RAVI', 'RAVI-RAVI-CHANDRA', 'RAVI-RAVI-MANGAL', 'RAVI-RAVI-RAHU'],
+        'hi': ['रवि-केतु-केतु', 'रवि-केतु-शुक्र', 'रवि-केतु-रवि', 'रवि-केतु-चंद्र', 'रवि-केतु-मंगल', 'रवि-केतु-राहु', 'रवि-केतु-गुरु', 'रवि-केतु-शनि', 'रवि-केतु-बुध', 'रवि-शुक्र-शुक्र', 'रवि-शुक्र-रवि', 'रवि-शुक्र-चंद्र', 'रवि-शुक्र-मंगल', 'रवि-शुक्र-राहु', 'रवि-शुक्र-गुरु', 'रवि-शुक्र-शनि', 'रवि-शुक्र-बुध', 'रवि-शुक्र-केतु', 'रवि-रवि-रवि', 'रवि-रवि-चंद्र', 'रवि-रवि-मंगल', 'रवि-रवि-राहु'],
+        'mr': ['रवि-केतु-केतु', 'रवि-केतु-शुक्र', 'रवि-केतु-रवि', 'रवि-केतु-चंद्र', 'रवि-केतु-मंगल', 'रवि-केतु-राहु', 'रवि-केतु-गुरु', 'रवि-केतु-शनि', 'रवि-केतु-बुध', 'रवि-शुक्र-शुक्र', 'रवि-शुक्र-रवि', 'रवि-शुक्र-चंद्र', 'रवि-शुक्र-मंगल', 'रवि-शुक्र-राहु', 'रवि-शुक्र-गुरु', 'रवि-शुक्र-शनि', 'रवि-शुक्र-बुध', 'रवि-शुक्र-केतु', 'रवि-रवि-रवि', 'रवि-रवि-चंद्र', 'रवि-रवि-मंगल', 'रवि-रवि-राहु'],
+        'sa': ['रवि-केतु-केतु', 'रवि-केतु-शुक्र', 'रवि-केतु-रवि', 'रवि-केतु-चंद्र', 'रवि-केतु-मंगल', 'रवि-केतु-राहु', 'रवि-केतु-गुरु', 'रवि-केतु-शनि', 'रवि-केतु-बुध', 'रवि-शुक्र-शुक्र', 'रवि-शुक्र-रवि', 'रवि-शुक्र-चंद्र', 'रवि-शुक्र-मंगल', 'रवि-शुक्र-राहु', 'रवि-शुक्र-गुरु', 'रवि-शुक्र-शनि', 'रवि-शुक्र-बुध', 'रवि-शुक्र-केतु', 'रवि-रवि-रवि', 'रवि-रवि-चंद्र', 'रवि-रवि-मंगल', 'रवि-रवि-राहु']
+    };
+
+    // Update labels
+    document.querySelector('label[for="language"]').innerText = languageText[language];
+    document.querySelector('label[for="files"]').innerText = rashiOptions[language][0];
+    document.querySelector('label[for="keys"]').innerText = keyOptions[language][0];
+    document.querySelector('label[for="values"]').innerText = language === 'en' ? 'Starting point' : 'आरंभिक बिंदु';
+    document.querySelector('label[for="dates"]').innerText = language === 'en' ? 'Select a date:' : 'तारीख निवडा:';
+
+    // Update options
+    var fileDropdown = document.getElementById('files');
+    fileDropdown.querySelectorAll('option').forEach((option, index) => {
+        option.innerText = rashiOptions[language][index];
+    });
+    var keyDropdown = document.getElementById('keys');
+    keyDropdown.querySelectorAll('option').forEach((option, index) => {
+        option.innerText = keyOptions[language][index];
+    });
+
+    // Update placeholder text
+    document.getElementById('dates').placeholder = language === 'en' ? 'mm/dd/yyyy' : 'दिनांक (म/द/व्य)';
+}
+    
 
     // Call the function to set labels initially
     changeLanguage();
