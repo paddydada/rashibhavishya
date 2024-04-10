@@ -14,12 +14,14 @@
       font-family: Arial, sans-serif;
     }
 
-    #header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-    }
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  padding: 10px;
+}
+
 
     #ganesh-image {
       display: block;
@@ -98,7 +100,7 @@
     }
 
     /* Make chart containers fluid */
-    #charts-container .container-fluid {
+    #charts-container .container {
       padding-right: 0;
       padding-left: 0;
     }
@@ -106,8 +108,7 @@
 </head>
 <body>
   <div id="header" class="container">
-    <h1 id="title" class="text-center">om Ganesh namha</h1>
-    <img id="ganesh-image" src="https://m.media-amazon.com/images/I/515PZdpAWhL._SX300_SY300_QL70_FMwebp_.jpg" alt="Lord Ganesha" />
+    <h1 id="title">om Ganesh namha</h1>
     <select id="language" class="form-control">
       <option value="en">English</option>
       <option value="hi">Hindi</option>
