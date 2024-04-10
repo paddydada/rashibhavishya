@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const rashiName = selectedRashi
                 ? selectedRashi.split(".")[0].toUpperCase()
                 : null;
-
+            console.log( data[rashiName + "PL"]);
             if (rashiName && data[rashiName + "PL"] && data[rashiName + "MN"]) {
                 const rashiPl = rashiName + "PL";
                 const rashiMn = rashiName + "MN";
