@@ -12,16 +12,12 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
     #header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
       padding: 10px;
     }
 
@@ -29,10 +25,6 @@
       display: block;
       margin: 20px auto;
       max-width: 100px;
-    }
-
-    #title {
-      text-align: left;
     }
 
     label {
@@ -51,9 +43,9 @@
 
     #nseChart,
     #bseChart {
-      width: calc(50% - 20px);
+      width: 100%; /* Adjust to your preference */
       height: 400px;
-      margin: 10px;
+      margin-bottom: 20px;
     }
 
     #refresh {
@@ -62,7 +54,7 @@
   </style>
 </head>
 <body>
-  <div id="header">
+  <div id="header" class="container">
     <h1 id="title">om Ganesh namha</h1>
     <div>
       <label for="language">Select Language:</label>
@@ -74,27 +66,25 @@
       </select>
     </div>
   </div>
-  <img id="ganesh-image" src="https://m.media-amazon.com/images/I/515PZdpAWhL._SX300_SY300_QL70_FMwebp_.jpg" alt="Lord Ganesha" />
-  <div class="container-fluid">
+  <img id="ganesh-image" src="https://m.media-amazon.com/images/I/515PZdpAWhL._SX300_SY300_QL70_FMwebp_.jpg" alt="Lord Ganesha" class="container" />
+  <div class="container">
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-3">
         <label for="files">Select Rashi :</label>
-      <select id="files"class="form-control">
- <option value="mesh.json">Mesh &#9800;</option>
-  <option value="vrishabha.json">Vrishabha &#9801;</option>
-  <option value="mithuna.json">Mithuna &#9802;</option>
-  <option value="karka.json">Karka &#9803;</option>
-  <option value="simha.json">Simha &#9804;</option>
-  <option value="kanya.json">Kanya &#9805;</option>
-  <option value="tula.json">Tula &#9806;</option>
-  <option value="vrishchika.json">Vrishchika &#9807;</option>
-  <option value="dhanu.json">Dhanu &#9808;</option>
-  <option value="makara.json">Makara &#9809;</option>
-  <option value="kumbha.json">Kumbha &#9810;</option>
-  <option value="meena.json">Meena &#9811;</option>
-
-</select>
-
+        <select id="files" class="form-control">
+          <option value="mesh.json">Mesh &#9800;</option>
+          <option value="vrishabha.json">Vrishabha &#9801;</option>
+          <option value="mithuna.json">Mithuna &#9802;</option>
+          <option value="karka.json">Karka &#9803;</option>
+          <option value="simha.json">Simha &#9804;</option>
+          <option value="kanya.json">Kanya &#9805;</option>
+          <option value="tula.json">Tula &#9806;</option>
+          <option value="vrishchika.json">Vrishchika &#9807;</option>
+          <option value="dhanu.json">Dhanu &#9808;</option>
+          <option value="makara.json">Makara &#9809;</option>
+          <option value="kumbha.json">Kumbha &#9810;</option>
+          <option value="meena.json">Meena &#9811;</option>
+        </select>
       </div>
       <div class="col-md-3">
         <label for="keys">Select a key :</label>
@@ -110,28 +100,25 @@
         <label for="dates">Select a date:</label>
         <input type="date" id="dates" class="form-control" />
       </div>
-      <div class="col-md-1">
-          <div id="button-container">
-
-    <button id="refresh" class="btn btn-primary">Refresh</button>
-  </div>
-
-      </div>
     </div>
     <div class="row">
       <div class="col-md-12">
-        <div id="charts-container">
-          <div class="col-md-6">
-            <div id="nseChart"></div>
-          </div>
-          <div class="col-md-6">
-            <div id="bseChart"></div>
-          </div>
+        <div id="button-container">
+          <button id="refresh" class="btn btn-primary">Refresh</button>
         </div>
       </div>
     </div>
   </div>
-
+  <div id="charts-container" class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div id="nseChart"></div>
+      </div>
+      <div class="col-md-6">
+        <div id="bseChart"></div>
+      </div>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
