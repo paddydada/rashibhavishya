@@ -14,14 +14,13 @@
       font-family: Arial, sans-serif;
     }
 
-#header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* Align items vertically */
-  flex-wrap: nowrap; /* Prevent wrapping */
-  padding: 10px;
-}
-
+    #header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; /* Align items vertically */
+      flex-wrap: nowrap; /* Prevent wrapping */
+      padding: 10px;
+    }
 
     #ganesh-image {
       display: block;
@@ -38,9 +37,9 @@
     }
 
     #charts-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
     }
 
     #nseChart,
@@ -158,13 +157,15 @@
       </div>
     </div>
   </div>
-  <div id="charts-container" class="container-fluid">
-    <div class="row">
-      <div class="col-md-6">
-        <div id="nseChart"></div>
-      </div>
-      <div class="col-md-6">
-        <div id="bseChart"></div>
+  <div id="charts-container">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div id="nseChart"></div>
+        </div>
+        <div class="col-md-6">
+          <div id="bseChart"></div>
+        </div>
       </div>
     </div>
   </div>
