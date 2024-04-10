@@ -180,15 +180,18 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             yAxis: {
                 title: {
-                    text: "Values",
+                    text: "points",
                 },
             },
             series: [
                 {
-                    name: "Values",
+                    name: "rashi",
                     data: Object.values(data),
                 },
             ],
+            accessibility: { 
+            enabled: true,
+        },
         });
     }
 
