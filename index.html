@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <!-- Added meta tag for responsiveness -->
   <title>JSON Data Display</title>
   <!-- Add Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
@@ -17,8 +17,7 @@
     #header {
       display: flex;
       justify-content: space-between;
-      align-items: center; /* Align items vertically */
-      flex-wrap: nowrap; /* Prevent wrapping */
+      align-items: center;
       padding: 10px;
     }
 
@@ -37,84 +36,46 @@
     }
 
     #charts-container {
-      width: 100%;
-      max-width: 100%;
-      margin: 0 auto;
+    
+      
+      justify-content: center;
     }
 
     #nseChart,
     #bseChart {
-      width: 100%; /* Adjust to your preference */
+      /* Set height to 100% */
       height: 400px;
+      /* Adjust width to 100% to fit the container */
+      width: 100%;
       margin-bottom: 20px;
     }
 
     #refresh {
       margin-top: 10px;
     }
-
-    /* Added styles */
-    .container {
-      max-width: 100%;
-      margin-right: auto;
-      margin-left: auto;
-      padding-right: 15px;
-      padding-left: 15px;
-    }
-
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      margin-right: -15px;
-      margin-left: -15px;
-    }
-
-    .col-md-3,
-    .col-md-6 {
-      flex: 0 0 auto;
-      width: 100%;
-      max-width: 33.333333%;
-    }
-
-    @media (min-width: 768px) {
-      .col-md-3,
-      .col-md-6 {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 33.333333%;
-      }
-    }
-
-    @media (min-width: 992px) {
-      .col-md-3 {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 25%;
-      }
-      .col-md-6 {
-        flex: 0 0 auto;
-        width: 100%;
-        max-width: 50%;
-      }
-    }
-
-    /* Make chart containers fluid */
-    #charts-container .container {
-      padding-right: 0;
-      padding-left: 0;
-    }
   </style>
 </head>
 <body>
-  <div id="header" class="container">
-    <h1 id="title">om Ganesh namha</h1>
-    <select id="language" class="form-control">
-      <option value="en">English</option>
-      <option value="hi">Hindi</option>
-      <option value="mr">Marathi</option>
-      <option value="sa">Sanskrit</option>
-    </select>
+  <div  class="container">
+    <div class="row align-items-center">
+      <div class="col-md-4">
+        <h1 id="title">Om Ganesh namha</h1>
+      </div>
+      <div class="col-md-6">
+        <img id="ganesh-image" src="https://m.media-amazon.com/images/I/515PZdpAWhL._SX300_SY300_QL70_FMwebp_.jpg" alt="Lord Ganesha" class="img-fluid" />
+      </div>
+      <div class="col-md-2">
+        <label for="language">Select Language:</label>
+        <select id="language" class="form-control">
+          <option value="en">English</option>
+          <option value="hi">Hindi</option>
+          <option value="mr">Marathi</option>
+          <option value="sa">Sanskrit</option>
+        </select>
+      </div>
+    </div>
   </div>
+  
   <div class="container">
     <div class="row">
       <div class="col-md-3">
@@ -157,15 +118,13 @@
       </div>
     </div>
   </div>
-  <div id="charts-container">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6">
-          <div id="nseChart"></div>
-        </div>
-        <div class="col-md-6">
-          <div id="bseChart"></div>
-        </div>
+  <div id="charts-container" class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div id="nseChart"></div>
+      </div>
+      <div class="col-md-6">
+        <div id="bseChart"></div>
       </div>
     </div>
   </div>
