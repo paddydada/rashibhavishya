@@ -96,11 +96,18 @@
         max-width: 50%;
       }
     }
+
+    /* Make chart containers fluid */
+    #charts-container .container-fluid {
+      padding-right: 0;
+      padding-left: 0;
+    }
   </style>
 </head>
 <body>
   <div id="header" class="container">
-    <h1 id="title">om Ganesh namha</h1>
+    <h1 id="title" class="text-center">om Ganesh namha</h1>
+    <img id="ganesh-image" src="https://m.media-amazon.com/images/I/515PZdpAWhL._SX300_SY300_QL70_FMwebp_.jpg" alt="Lord Ganesha" />
     <select id="language" class="form-control">
       <option value="en">English</option>
       <option value="hi">Hindi</option>
@@ -150,7 +157,7 @@
       </div>
     </div>
   </div>
-  <div id="charts-container" class="container">
+  <div id="charts-container" class="container-fluid">
     <div class="row">
       <div class="col-md-6">
         <div id="nseChart"></div>
