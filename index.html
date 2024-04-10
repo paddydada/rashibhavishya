@@ -77,7 +77,7 @@
   <img id="ganesh-image" src="https://m.media-amazon.com/images/I/515PZdpAWhL._SX300_SY300_QL70_FMwebp_.jpg" alt="Lord Ganesha" />
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-2">
         <label for="files">Select Rashi :</label>
         <select id="files" class="form-control">
           <option value="kark.json">Kark</option>
@@ -99,6 +99,13 @@
         <label for="dates">Select a date:</label>
         <input type="date" id="dates" class="form-control" />
       </div>
+      <div class="col-md-1">
+          <div id="button-container">
+
+    <button id="refresh" class="btn btn-primary">Refresh</button>
+  </div>
+
+      </div>
     </div>
     <div class="row">
       <div class="col-md-12">
@@ -112,10 +119,6 @@
         </div>
       </div>
     </div>
-  </div>
-  <div id="button-container">
-    <!-- Add refresh button -->
-    <button id="refresh" class="btn btn-primary">Refresh</button>
   </div>
 
   <script src="script.js"></script>
