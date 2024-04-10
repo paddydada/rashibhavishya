@@ -111,6 +111,10 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        localStorage.setItem("nseValue", nseValue); // Store the NSE value in local storage
+        localStorage.setItem("bseValue", bseValue); // Store the BSE value in local storage
+        localStorage.setItem("selectedDate", event.target.value); // Store the selected date in local storage
+
         fetch(selectedDayFile)
             .then((response) => response.json())
             .then((data) => {
