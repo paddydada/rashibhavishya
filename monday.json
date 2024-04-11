@@ -21,7 +21,7 @@
     "SHANI": -41,
     "BUDH": -42
   },
-  "WRUSHABHPL": {
+  "VRISHABHAPL": {
     "KETU": 14,
     "SHUKRA": 0,
     "RAVI": 7,
@@ -32,7 +32,7 @@
     "SHANI": 13,
     "BUDH": 16
   },
-  "WRUSHABHMN": {
+  "VRISHABHAMN": {
     "KETU": -21,
     "SHUKRA": -29,
     "RAVI": -42,
@@ -43,7 +43,7 @@
     "SHANI": -4,
     "BUDH": -31
   },
-  "MITHUNPL": {
+  "MITHUNAPL": {
     "KETU": 10,
     "SHUKRA": 30,
     "RAVI": 6,
@@ -54,7 +54,7 @@
     "SHANI": 15,
     "BUDH": 5
   },
-  "MITHUNMN": {
+  "MITHUNAMN": {
     "KETU": -8,
     "SHUKRA": -4,
     "RAVI": -11,
@@ -153,7 +153,7 @@
     "SHANI": -5,
     "BUDH": -9
   },
-  "WRUSHCHIKPL": {
+  "VRISHCHIKAPL": {
     "KETU": 5,
     "SHUKRA": 10,
     "RAVI": 21,
@@ -164,7 +164,7 @@
     "SHANI": 8,
     "BUDH": 9
   },
-  "WRUSHCHIKMN": {
+  "VRISHCHIKAMN": {
     "KETU": -52,
     "SHUKRA": -21,
     "RAVI": -12,
@@ -197,7 +197,7 @@
     "SHANI": -53,
     "BUDH": -6
   },
-  "MAKARPL": {
+  "MAKARAPL": {
     "KETU": 6,
     "SHUKRA": 17,
     "RAVI": 14,
@@ -208,7 +208,7 @@
     "SHANI": 4,
     "BUDH": 43
   },
-  "MAKARMN": {
+  "MAKARAMN": {
     "KETU": -37,
     "SHUKRA": -18,
     "RAVI": -24,
@@ -241,7 +241,7 @@
     "SHANI": -7,
     "BUDH": -17
   },
-  "MEENPL": {
+  "MEENAPL": {
     "KETU": 42,
     "SHUKRA": 42,
     "RAVI": 6,
@@ -252,7 +252,7 @@
     "SHANI": 22,
     "BUDH": 5
   },
-  "MEENMN": {
+  "MEENAMN": {
     "KETU": -33,
     "SHUKRA": -14,
     "RAVI": -30,
