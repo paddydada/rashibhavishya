@@ -10,21 +10,13 @@
   <script src="https://code.highcharts.com/highcharts.js"></script>
   <!-- Add CSS for proper display -->
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
     }
-
-    #header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-    }
-
     #ganesh-image {
-      display: block;
-      margin: 20px auto;
-      max-width: 100px;
+      max-height: 80px; /* Set max height for the image */
     }
 
     label {
@@ -35,35 +27,47 @@
       margin-bottom: 10px;
     }
 
-    #charts-container {
-    
-      
-      justify-content: center;
+    #video-background {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1000;
     }
 
-    #nseChart,
-    #bseChart {
-      /* Set height to 100% */
-      height: 400px;
-      /* Adjust width to 100% to fit the container */
-      width: 100%;
-      margin-bottom: 20px;
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+      padding: 20px;
     }
 
-    #refresh {
-      margin-top: 10px;
+    .container {
+      margin: auto;
+      padding: 20px;
+      width: 100%; /* Set container width to 100% */
+      max-width: none; /* Remove max-width for fluid layout */
     }
   </style>
 </head>
 <body>
-  <div  class="container">
-    <div class="row align-items-center">
-      <div class="col-md-4">
-        <h1 id="title">Om Ganesh namha</h1>
-      </div>
-      <div class="col-md-6">
+  <!-- Video Background -->
+  <video id="video-background" autoplay loop muted>
+    <source src="https://media.istockphoto.com/id/1161264335/video/4k-zodiac-signs-and-armillary-sphere-on-blue-background-seamless-looped-3d-animation.mp4?s=mp4-640x640-is&k=20&c=GDGGgJavbetjHzvwk90Lkam2LvclSiQgkN5GTBpUscs=" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Content Container -->
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-2">
         <img id="ganesh-image" src="https://m.media-amazon.com/images/I/515PZdpAWhL._SX300_SY300_QL70_FMwebp_.jpg" alt="Lord Ganesha" class="img-fluid" />
       </div>
+      <div class="col-md-8"></div>
       <div class="col-md-2">
         <label for="language">Select Language:</label>
         <select id="language" class="form-control">
@@ -74,12 +78,11 @@
         </select>
       </div>
     </div>
-  </div>
-  <h1>Stock Market Prices</h1>
-    <div id="nse"></div>
-    <div id="bse"></div>
-  
-  <div class="container">
+    </div>
+
+
+  <!-- Remaining Content -->
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-3">
         <label for="files">Select Rashi :</label>
@@ -113,17 +116,16 @@
         <label for="dates">Select a date:</label>
         <input type="date" id="dates" class="form-control" />
       </div>
-
-          <div class="col-md-2">
-            <label ></label>
+      <div class="col-md-2">
+        <label ></label>
         <div id="button-container">
           <button id="refresh" class="btn btn-primary">Refresh</button>
         </div>
       </div>
-  
     </div>
-
   </div>
+
+  <!-- Charts -->
   <div id="charts-container" class="container-fluid">
     <div class="row">
       <div class="col-md-6">
@@ -134,39 +136,8 @@
       </div>
     </div>
   </div>
-      <script>
-        // Function to fetch NSE stock price
-        function fetchNSEPrice() {
-            fetch('https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=^NSEI&apikey=GYHD908EVD6Y7BDK')
-            .then(response => response.json())
-            .then(data => {
-                const price = data['Global Quote']['05. price'];
-                document.getElementById('nse').innerText = `NSE: ${price}`;
-            })
-            .catch(error => console.error('Error fetching NSE price:', error));
-        }
 
-        // Function to fetch BSE stock price
-        function fetchBSEPrice() {
-            fetch('https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=^BSESN&apikey=GYHD908EVD6Y7BDK')
-            .then(response => response.json())
-            .then(data => {
-                const price = data['Global Quote']['05. price'];
-                document.getElementById('bse').innerText = `BSE: ${price}`;
-            })
-            .catch(error => console.error('Error fetching BSE price:', error));
-        }
-
-        // Call the functions initially
-        fetchNSEPrice();
-        fetchBSEPrice();
-
-        // Refresh the prices every 30 seconds (adjust as needed)
-        setInterval(function () {
-            fetchNSEPrice();
-            fetchBSEPrice();
-        }, 30000); // 30 seconds
-    </script>
+  <!-- Add your script.js file -->
   <script src="script.js"></script>
 </body>
 </html>
