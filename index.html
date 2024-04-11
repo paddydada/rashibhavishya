@@ -75,6 +75,9 @@
       </div>
     </div>
   </div>
+  <h1>Stock Market Prices</h1>
+    <div id="nse"></div>
+    <div id="bse"></div>
   
   <div class="container">
     <div class="row">
@@ -131,6 +134,39 @@
       </div>
     </div>
   </div>
+      <script>
+        // Function to fetch NSE stock price
+        function fetchNSEPrice() {
+            fetch('https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=^NSEI&apikey=GYHD908EVD6Y7BDK')
+            .then(response => response.json())
+            .then(data => {
+                const price = data['Global Quote']['05. price'];
+                document.getElementById('nse').innerText = `NSE: ${price}`;
+            })
+            .catch(error => console.error('Error fetching NSE price:', error));
+        }
+
+        // Function to fetch BSE stock price
+        function fetchBSEPrice() {
+            fetch('https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=^BSESN&apikey=GYHD908EVD6Y7BDK')
+            .then(response => response.json())
+            .then(data => {
+                const price = data['Global Quote']['05. price'];
+                document.getElementById('bse').innerText = `BSE: ${price}`;
+            })
+            .catch(error => console.error('Error fetching BSE price:', error));
+        }
+
+        // Call the functions initially
+        fetchNSEPrice();
+        fetchBSEPrice();
+
+        // Refresh the prices every 30 seconds (adjust as needed)
+        setInterval(function () {
+            fetchNSEPrice();
+            fetchBSEPrice();
+        }, 30000); // 30 seconds
+    </script>
   <script src="script.js"></script>
 </body>
 </html>
